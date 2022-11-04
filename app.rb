@@ -91,8 +91,8 @@ class App
   end
 
   def create_book
-    puts 'Enter the title of the book'
     title = gets.chomp
+    puts 'Enter the title of the book'
     puts 'Enter the author of the book'
     author = gets.chomp
 
