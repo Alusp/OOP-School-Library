@@ -3,8 +3,6 @@ require_relative './teacher'
 require_relative './book'
 require_relative './rental'
 
-require 'pry'
-
 class App
   attr_accessor :books, :people, :rentals
 
@@ -17,12 +15,12 @@ class App
   def run
     puts 'Welcome to the School Library App!'
     until list_options
-    input = gets.chomp
-    if input == '7'
-      puts 'Have a good Day!'
-      break
-    end
-    option(input)
+      input = gets.chomp
+      if input == '7'
+        puts 'Have a good Day!'
+        break
+      end
+      option(input)
     end
   end
 
@@ -55,7 +53,6 @@ class App
       create_student
     else
       puts 'Invalid option'
-      
     end
   end
 
@@ -116,7 +113,6 @@ class App
     selected_person = gets.chomp.to_i
     puts 'Enter the date of the rental (yyyy-mm-dd): '
     date = gets.chomp.to_s
-    binding.pry
     @rentals << Rental.new(date, @books[selected_book], @people[selected_person])
     # @rentals << rental
     puts 'Rental created successfully and added to the rentals list'
